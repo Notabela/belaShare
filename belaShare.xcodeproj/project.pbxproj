@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		655DB4141E7B81F300202AF9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DB4121E7B81F300202AF9 /* PostCell.swift */; };
+		655DB4151E7B81F300202AF9 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655DB4131E7B81F300202AF9 /* PostCell.xib */; };
+		655F58F31E7B622600F3EA39 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F58F21E7B622600F3EA39 /* Post.swift */; };
+		655F58F51E7B687F00F3EA39 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F58F41E7B687F00F3EA39 /* ParseClient.swift */; };
+		656A6A6C1E7789DB0067AEBB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A6A6B1E7789DB0067AEBB /* Helper.swift */; };
+		656A6A731E7792D60067AEBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A6A721E7792D60067AEBB /* ProfileViewController.swift */; };
+		656A6A751E7794560067AEBB /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A6A741E7794560067AEBB /* CaptureViewController.swift */; };
+		656B4FCD1E6F80BA0092D9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B4FCC1E6F80BA0092D9EB /* AppDelegate.swift */; };
+		656B4FCF1E6F80BA0092D9EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B4FCE1E6F80BA0092D9EB /* LoginViewController.swift */; };
+		656B4FD21E6F80BA0092D9EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656B4FD01E6F80BA0092D9EB /* Main.storyboard */; };
+		656B4FD41E6F80BA0092D9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656B4FD31E6F80BA0092D9EB /* Assets.xcassets */; };
+		656B4FD71E6F80BA0092D9EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656B4FD51E6F80BA0092D9EB /* LaunchScreen.storyboard */; };
+		6589A7A61E779FCA00275F80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589A7A51E779FCA00275F80 /* HomeViewController.swift */; };
+		6589A7A81E77A9B100275F80 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589A7A71E77A9B100275F80 /* CaptionViewController.swift */; };
+		D8C10973E5ABFA94693815EB /* Pods_belaShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4715778C3DB6876611ED1EE3 /* Pods_belaShare.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08E617221C25C4C3024822CB /* Pods-belaShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-belaShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-belaShare/Pods-belaShare.debug.xcconfig"; sourceTree = "<group>"; };
+		4715778C3DB6876611ED1EE3 /* Pods_belaShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_belaShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		655DB4121E7B81F300202AF9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		655DB4131E7B81F300202AF9 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		655F58F21E7B622600F3EA39 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		655F58F41E7B687F00F3EA39 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
+		656A6A6B1E7789DB0067AEBB /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		656A6A721E7792D60067AEBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		656A6A741E7794560067AEBB /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		656B4FC91E6F80BA0092D9EB /* belaShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = belaShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		656B4FCC1E6F80BA0092D9EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		656B4FCE1E6F80BA0092D9EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		656B4FD11E6F80BA0092D9EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		656B4FD31E6F80BA0092D9EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		656B4FD61E6F80BA0092D9EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		656B4FD81E6F80BA0092D9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6589A7A51E779FCA00275F80 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6589A7A71E77A9B100275F80 /* CaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		D389F0CC700F3ADCB5D3905D /* Pods-belaShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-belaShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-belaShare/Pods-belaShare.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		656B4FC61E6F80BA0092D9EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C10973E5ABFA94693815EB /* Pods_belaShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		242ECE21E96EFF96AC9631ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4715778C3DB6876611ED1EE3 /* Pods_belaShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		655DB4111E7B818C00202AF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				655DB4121E7B81F300202AF9 /* PostCell.swift */,
+				655DB4131E7B81F300202AF9 /* PostCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		655F58F61E7B698B00F3EA39 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				655F58F41E7B687F00F3EA39 /* ParseClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		656A6A6E1E7790EB0067AEBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				655F58F21E7B622600F3EA39 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		656A6A6F1E7790F40067AEBB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				656B4FCE1E6F80BA0092D9EB /* LoginViewController.swift */,
+				6589A7A51E779FCA00275F80 /* HomeViewController.swift */,
+				656A6A721E7792D60067AEBB /* ProfileViewController.swift */,
+				656A6A741E7794560067AEBB /* CaptureViewController.swift */,
+				6589A7A71E77A9B100275F80 /* CaptionViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		656B4FC01E6F80BA0092D9EB = {
+			isa = PBXGroup;
+			children = (
+				656B4FCB1E6F80BA0092D9EB /* belaShare */,
+				656B4FCA1E6F80BA0092D9EB /* Products */,
+				F09D3CB299A1B4FE4FEFAC01 /* Pods */,
+				242ECE21E96EFF96AC9631ED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		656B4FCA1E6F80BA0092D9EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				656B4FC91E6F80BA0092D9EB /* belaShare.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		656B4FCB1E6F80BA0092D9EB /* belaShare */ = {
+			isa = PBXGroup;
+			children = (
+				655DB4111E7B818C00202AF9 /* Views */,
+				655F58F61E7B698B00F3EA39 /* API */,
+				656A6A6F1E7790F40067AEBB /* View Controllers */,
+				656A6A6E1E7790EB0067AEBB /* Models */,
+				656B4FCC1E6F80BA0092D9EB /* AppDelegate.swift */,
+				656B4FD01E6F80BA0092D9EB /* Main.storyboard */,
+				656B4FD31E6F80BA0092D9EB /* Assets.xcassets */,
+				656B4FD51E6F80BA0092D9EB /* LaunchScreen.storyboard */,
+				656B4FD81E6F80BA0092D9EB /* Info.plist */,
+				656A6A6B1E7789DB0067AEBB /* Helper.swift */,
+			);
+			path = belaShare;
+			sourceTree = "<group>";
+		};
+		F09D3CB299A1B4FE4FEFAC01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08E617221C25C4C3024822CB /* Pods-belaShare.debug.xcconfig */,
+				D389F0CC700F3ADCB5D3905D /* Pods-belaShare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		656B4FC81E6F80BA0092D9EB /* belaShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656B4FDB1E6F80BA0092D9EB /* Build configuration list for PBXNativeTarget "belaShare" */;
+			buildPhases = (
+				451D91C3DF56E4D07C30204A /* [CP] Check Pods Manifest.lock */,
+				656B4FC51E6F80BA0092D9EB /* Sources */,
+				656B4FC61E6F80BA0092D9EB /* Frameworks */,
+				656B4FC71E6F80BA0092D9EB /* Resources */,
+				DD463D45634810721B772C10 /* [CP] Embed Pods Frameworks */,
+				3DC4422BB1082055C63024A3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = belaShare;
+			productName = belaShare;
+			productReference = 656B4FC91E6F80BA0092D9EB /* belaShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		656B4FC11E6F80BA0092D9EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Notabela;
+				TargetAttributes = {
+					656B4FC81E6F80BA0092D9EB = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 656B4FC41E6F80BA0092D9EB /* Build configuration list for PBXProject "belaShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 656B4FC01E6F80BA0092D9EB;
+			productRefGroup = 656B4FCA1E6F80BA0092D9EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				656B4FC81E6F80BA0092D9EB /* belaShare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		656B4FC71E6F80BA0092D9EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656B4FD71E6F80BA0092D9EB /* LaunchScreen.storyboard in Resources */,
+				656B4FD41E6F80BA0092D9EB /* Assets.xcassets in Resources */,
+				656B4FD21E6F80BA0092D9EB /* Main.storyboard in Resources */,
+				655DB4151E7B81F300202AF9 /* PostCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DC4422BB1082055C63024A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-belaShare/Pods-belaShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		451D91C3DF56E4D07C30204A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD463D45634810721B772C10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-belaShare/Pods-belaShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		656B4FC51E6F80BA0092D9EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655F58F51E7B687F00F3EA39 /* ParseClient.swift in Sources */,
+				656B4FCF1E6F80BA0092D9EB /* LoginViewController.swift in Sources */,
+				656B4FCD1E6F80BA0092D9EB /* AppDelegate.swift in Sources */,
+				656A6A731E7792D60067AEBB /* ProfileViewController.swift in Sources */,
+				655F58F31E7B622600F3EA39 /* Post.swift in Sources */,
+				656A6A6C1E7789DB0067AEBB /* Helper.swift in Sources */,
+				656A6A751E7794560067AEBB /* CaptureViewController.swift in Sources */,
+				6589A7A81E77A9B100275F80 /* CaptionViewController.swift in Sources */,
+				6589A7A61E779FCA00275F80 /* HomeViewController.swift in Sources */,
+				655DB4141E7B81F300202AF9 /* PostCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		656B4FD01E6F80BA0092D9EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				656B4FD11E6F80BA0092D9EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		656B4FD51E6F80BA0092D9EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				656B4FD61E6F80BA0092D9EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		656B4FD91E6F80BA0092D9EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		656B4FDA1E6F80BA0092D9EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		656B4FDC1E6F80BA0092D9EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08E617221C25C4C3024822CB /* Pods-belaShare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = belaShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.notabela.belaShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		656B4FDD1E6F80BA0092D9EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D389F0CC700F3ADCB5D3905D /* Pods-belaShare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = belaShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.notabela.belaShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		656B4FC41E6F80BA0092D9EB /* Build configuration list for PBXProject "belaShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656B4FD91E6F80BA0092D9EB /* Debug */,
+				656B4FDA1E6F80BA0092D9EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		656B4FDB1E6F80BA0092D9EB /* Build configuration list for PBXNativeTarget "belaShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656B4FDC1E6F80BA0092D9EB /* Debug */,
+				656B4FDD1E6F80BA0092D9EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 656B4FC11E6F80BA0092D9EB /* Project object */;
+}
