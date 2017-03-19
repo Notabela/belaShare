@@ -44,10 +44,12 @@ class CaptionViewController: UIViewController, UITextViewDelegate
 
     @IBAction func onShare(_ sender: UIBarButtonItem)
     {
-        let resizedImage = image.resized(to: CGSize(width: 1080, height: 1080))
-        let PFImageFile = getPFFileFrom(image: resizedImage)
+        let hiResImage = image.resized(to: CGSize(width: 1080, height: 1080))
+        let lowResImage = image.resized(to: CGSize(width: 64, height: 64))
+        let highPFImageFile = getPFFileFrom(image: hiResImage)
+        let lowPFImageFile = getPFFileFrom(image: lowResImage)
  
-        let post = Post(image: PFImageFile, caption: textView.text, author: PFUser.current())
+        let post = Post(highResMedia: highPFImageFile, lowResMedia: lowPFImageFile, caption: textView.text, author: PFUser.current())
         post.postToServer
         {
             (success: Bool, error: Error?) in

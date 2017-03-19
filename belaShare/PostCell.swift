@@ -24,8 +24,15 @@ class PostCell: UITableViewCell
     {
         didSet
         {
-            postImageView.file = post!.media
-            postImageView.loadInBackground()
+            postImageView.file = post!.lowResMedia
+            postImageView.load { (image: UIImage?, error: Error?) in
+                
+               self.postImageView.file = self.post!.highResMedia
+               self.postImageView.loadInBackground()
+               
+            }
+            
+            
             userNameLabel.text = post!.author?.username
             likesLabel.text = "\(post!.likesCount) Likes"
            

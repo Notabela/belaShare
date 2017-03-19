@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
@@ -55,13 +56,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         
         //create imageview and round it
-        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        let profileView = PFImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
         profileView.clipsToBounds = true
         profileView.layer.cornerRadius = 15;
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
         profileView.layer.borderWidth = 1;
-        
-        profileView.image = #imageLiteral(resourceName: "test")
+
+        profileView.file = posts?[section].author?["profileImage"] as? PFFile
+        profileView.loadInBackground()
         
         headerView.addSubview(profileView)
         
@@ -72,7 +74,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //Add TimeStamp label
         let timeStampLabel = UILabel(frame: CGRect(x: view.frame.width - 35, y: 10, width: 50, height: 30))
-        timeStampLabel.text = "6s"
+        timeStampLabel.text = posts?[section].shortTimeStamp
         headerView.addSubview(timeStampLabel)
         
         return headerView

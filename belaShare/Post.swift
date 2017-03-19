@@ -20,38 +20,48 @@ class Post: NSObject
      - parameter completion: Block to be executed after save operation is complete
      */
     
-    var media: PFFile?
+    var highResMedia: PFFile?
+    var lowResMedia: PFFile?
     var author: PFUser?
     var caption: String?
     var likesCount: UInt
     var commentsCount: UInt
-    //var timeCreated: Date
+    var timeCreated: Date
     
-    init(image: PFFile?, caption: String?, author: PFUser?, likesCount: UInt = 0, commentsCount: UInt = 0/*, timeCreated: Date = Date()*/)
+    var shortTimeStamp: String
     {
-        media = image
+        return DateFormatter.timeSince(from: timeCreated)
+    }
+    
+    init(highResMedia: PFFile?, lowResMedia: PFFile?, caption: String?, author: PFUser?, likesCount: UInt = 0, commentsCount: UInt = 0, timeCreated: Date = Date())
+    {
+        self.highResMedia = highResMedia
+        self.lowResMedia = lowResMedia
         self.caption = caption
         self.author = author
         self.likesCount = likesCount
         self.commentsCount = commentsCount
-        //self.timeCreated = timeCreated
+        self.timeCreated = timeCreated
     }
     
     convenience init(object: PFObject)
     {
-        let media = object["media"] as? PFFile
+        let highResMedia = object["highResMedia"] as? PFFile
+        let lowResMedia = object["lowResMedia"] as? PFFile
         let author = object["author"] as? PFUser
         let caption = object["caption"] as? String
         let likesCount = object["likesCount"] as! UInt
         let commentsCount = object["commentsCount"] as! UInt
+        let date = object.createdAt!
         
-        self.init(image: media, caption: caption, author: author, likesCount: likesCount, commentsCount: commentsCount)
+        self.init(highResMedia: highResMedia, lowResMedia: lowResMedia, caption: caption, author: author, likesCount: likesCount, commentsCount: commentsCount, timeCreated: date)
     }
     
     private func convertToPFObject() -> PFObject
     {
         let post = PFObject(className: "Post")
-        post["media"] = media
+        post["highResMedia"] = highResMedia
+        post["lowResMedia"] = lowResMedia
         post["author"] = author
         post["caption"] = caption
         post["likesCount"] = likesCount

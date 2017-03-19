@@ -101,10 +101,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onSignUp(_ sender: UIButton)
     {
+        guard let username = usernameField.text else
+        {
+            self.showMessage(title: "Error", message: "Username is Required")
+            return
+        }
+        
+        guard let password = passwordField.text else
+        {
+            self.showMessage(title: "Error", message: "Enter your password")
+            return
+        }
+        
         let newUser = PFUser()
         
-        newUser.username = usernameField.text
-        newUser.password = passwordField.text
+        newUser.username = username
+        newUser.password = password
+        newUser["profileImage"] = getPFFileFrom(image: #imageLiteral(resourceName: "defaultProfile"))
         
         newUser.signUpInBackground {
             
@@ -112,14 +125,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if success
             {
-                print("I signed UP")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 
             } else {
-//                
-//                if error!.code == 202 {
-//                    print("userName already exists")
-//                }
+                
+               self.showMessage(title: "Error", message: error!.localizedDescription)
             }
             
         }
@@ -127,13 +137,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func onSignIn(_ sender: UIButton)
     {
+        
         PFUser.logInWithUsername(inBackground: usernameField!.text!, password: passwordField!.text!) { (user: PFUser?, error: Error?) in
             
             if user != nil
             {
-                print("logged in")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                self.showMessage(title: "Error", message: error!.localizedDescription)
             }
+            
         }
     }
 
