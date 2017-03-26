@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="427" height="570"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="427" height="570"/>
+                <rect key="frame" x="0.0" y="0.0" width="427" height="569"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-hZ-E7H" customClass="PFImageView">
@@ -47,12 +47,6 @@
                             <action selector="onComment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wq5-EW-1sG"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="notabela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH1-tC-YVq">
-                        <rect key="frame" x="10" y="497" width="66" height="20"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.61568627450000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jr-gT-ePr">
                         <rect key="frame" x="10" y="471" width="407" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
@@ -65,14 +59,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiN-Nw-age">
+                        <rect key="frame" x="10" y="497" width="66" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Gjb-nE-Y06"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <state key="normal" title="notabela">
+                            <color key="titleColor" red="0.0" green="0.61568627450000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="onTapName:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D4c-n4-RCl"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vGy-hZ-E7H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2g4-Ez-iDh"/>
                     <constraint firstItem="vGy-hZ-E7H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Rf-M8-63B"/>
                     <constraint firstItem="qg5-On-EKs" firstAttribute="centerY" secondItem="DiV-XK-QRq" secondAttribute="centerY" id="6TV-jE-E0T"/>
                     <constraint firstAttribute="trailing" secondItem="1jr-gT-ePr" secondAttribute="trailing" constant="10" id="ANi-cU-hax"/>
+                    <constraint firstItem="OiN-Nw-age" firstAttribute="leading" secondItem="1jr-gT-ePr" secondAttribute="leading" id="AfA-zz-XxQ"/>
                     <constraint firstAttribute="trailing" secondItem="Khf-BH-j6z" secondAttribute="trailing" constant="10" id="DKn-8i-jaj"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Khf-BH-j6z" secondAttribute="bottom" constant="15" id="N0W-UT-vR0"/>
+                    <constraint firstItem="OiN-Nw-age" firstAttribute="top" secondItem="1jr-gT-ePr" secondAttribute="bottom" constant="5" id="Wfn-Ya-Ksj"/>
                     <constraint firstItem="1jr-gT-ePr" firstAttribute="top" secondItem="DiV-XK-QRq" secondAttribute="bottom" constant="10" id="XDc-Wh-UBd"/>
                     <constraint firstAttribute="trailing" secondItem="vGy-hZ-E7H" secondAttribute="trailing" id="ZXX-bS-z0E"/>
                     <constraint firstItem="DiV-XK-QRq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="azw-1n-LIn"/>
@@ -81,15 +90,13 @@
                     <constraint firstItem="DiV-XK-QRq" firstAttribute="top" secondItem="vGy-hZ-E7H" secondAttribute="bottom" constant="10" id="g3W-Yg-wk2"/>
                     <constraint firstItem="1jr-gT-ePr" firstAttribute="leading" secondItem="DiV-XK-QRq" secondAttribute="leading" id="r8h-7k-eU9"/>
                     <constraint firstItem="Khf-BH-j6z" firstAttribute="leading" secondItem="1jr-gT-ePr" secondAttribute="leading" id="w3M-uI-gQ9"/>
-                    <constraint firstItem="CH1-tC-YVq" firstAttribute="leading" secondItem="DiV-XK-QRq" secondAttribute="leading" id="wwP-Hk-FCZ"/>
-                    <constraint firstItem="CH1-tC-YVq" firstAttribute="top" secondItem="1jr-gT-ePr" secondAttribute="bottom" constant="5" id="xyt-Y2-JcE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="captionLabel" destination="Khf-BH-j6z" id="z2s-pf-2uu"/>
                 <outlet property="likesLabel" destination="1jr-gT-ePr" id="W6h-Gc-gDN"/>
                 <outlet property="postImageView" destination="vGy-hZ-E7H" id="0ne-pd-31d"/>
-                <outlet property="userNameLabel" destination="CH1-tC-YVq" id="JDR-3H-ikV"/>
+                <outlet property="userNameButton" destination="OiN-Nw-age" id="wYH-04-pSI"/>
             </connections>
             <point key="canvasLocation" x="-88.5" y="123"/>
         </tableViewCell>

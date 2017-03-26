@@ -13,12 +13,13 @@ import ParseUI
 class PostCell: UITableViewCell
 {
 
-    @IBOutlet weak var userNameLabel: UILabel!
-
     @IBOutlet weak var userNameButton: UIButton!
+
     @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    
+    weak var delegate: PostCellDelegate?
     
     var post: Post?
     {
@@ -32,8 +33,7 @@ class PostCell: UITableViewCell
                
             }
             
-            
-            userNameLabel.text = post!.author?.username
+            userNameButton.setTitle(post!.author?.username, for: .normal)
             likesLabel.text = "\(post!.likesCount) Likes"
            
             if let caption = post?.caption
@@ -52,7 +52,6 @@ class PostCell: UITableViewCell
     {
         super.awakeFromNib()
         // Initialization code
-        
        
     }
 
@@ -60,6 +59,13 @@ class PostCell: UITableViewCell
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+
+    @IBAction func onTapName(_ sender: Any)
+    {
+        delegate?.usernameLabelWasTapped(post!.author!)
     }
     
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import KVNProgress
 
 class CaptionViewController: UIViewController, UITextViewDelegate
 {
@@ -50,26 +51,37 @@ class CaptionViewController: UIViewController, UITextViewDelegate
         let lowPFImageFile = getPFFileFrom(image: lowResImage)
  
         let post = Post(highResMedia: highPFImageFile, lowResMedia: lowPFImageFile, caption: textView.text, author: PFUser.current())
+        
+        KVNProgress.show()
+        
         post.postToServer
         {
             (success: Bool, error: Error?) in
             
             if error == nil
             {
-
-                print("image was posted")
+                KVNProgress.showSuccess(withStatus: "Success")
+                {
+                    if let navController = self.navigationController, navController.viewControllers.count >= 2
+                    {
+                        let viewController = navController.viewControllers[navController.viewControllers.count - 2] as! CaptureViewController
+                        viewController.imageWasPicked = false
+                        viewController.imageView.image = nil
+                    }
+                    
+                    let navC = self.tabBarController?.viewControllers?[0] as! UINavigationController
+                    let HomeVC = navC.viewControllers[0] as! HomeViewController
+                    HomeVC.onPullToRefresh(nil)
+                    self.tabBarController?.selectedIndex = 0
+                    let _ = self.navigationController?.popViewController(animated: true)
+                    
+                }
+            }
+            else
+            {
+                KVNProgress.showError()
             }
         }
-        
-        if let navController = self.navigationController, navController.viewControllers.count >= 2
-        {
-            let viewController = navController.viewControllers[navController.viewControllers.count - 2] as! CaptureViewController
-            viewController.imageWasPicked = false
-            viewController.imageView.image = nil
-        }
-        
-        tabBarController?.selectedIndex = 0
-        navigationController?.popViewController(animated: true)
     }
     
     func onTapView()

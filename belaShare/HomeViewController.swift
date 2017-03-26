@@ -9,8 +9,9 @@
 import UIKit
 import Parse
 import ParseUI
+import KVNProgress
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PostCellDelegate
 {
 
     @IBOutlet weak var postsTableView: UITableView!
@@ -20,6 +21,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         super.viewDidLoad()
         
+        //Create a refreshControl Element and customize if you want
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.lightGray
+        refreshControl.tintColor = UIColor.white
+        refreshControl.addTarget(self, action: #selector(onPullToRefresh(_:)), for: UIControlEvents.valueChanged)
+        postsTableView.insertSubview(refreshControl, at: 0)
+        
+        
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postsTableView.estimatedRowHeight = 500
@@ -28,6 +37,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         posts = []
         getPosts()
+    }
+    
+    internal func usernameLabelWasTapped(_ user: PFUser)
+    {
+        performSegue(withIdentifier: "profileSegue", sender: user)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let destVC = segue.destination as! UserProfileViewController
+        destVC.user = sender as! PFUser
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
@@ -44,6 +64,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
         
+        cell.delegate = self
         cell.post = posts?[indexPath.section]
         
         return cell
@@ -61,6 +82,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileView.layer.cornerRadius = 15;
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
         profileView.layer.borderWidth = 1;
+        
+        //add touchRecognizer to profileView
 
         profileView.file = posts?[section].author?["profileImage"] as? PFFile
         profileView.loadInBackground()
@@ -80,6 +103,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return headerView
     }
     
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         return 50
@@ -87,6 +111,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getPosts()
     {
+        KVNProgress.show()
+        
         ParseClient.getPosts
         {
             (data: [PFObject]?, error: Error?) in
@@ -102,9 +128,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 
                 self.postsTableView.reloadData()
+                KVNProgress.dismiss()
             }
             
         }
     }
+    
+    func onPullToRefresh(_ sender: UIRefreshControl?)
+    {
+        ParseClient.getPosts
+            {
+                (data: [PFObject]?, error: Error?) in
+                
+                if error == nil
+                {
+                    guard let data = data else { return }
+                    self.posts = []
+                    
+                    for object in data
+                    {
+                        let post = Post(object: object)
+                        self.posts?.append(post)
+                    }
+                    
+                    self.postsTableView.reloadData()
+                    sender?.endRefreshing()
+                }
+                
+        }
+    }
 
+}
+
+protocol PostCellDelegate: class
+{
+    func usernameLabelWasTapped(_ user: PFUser)
 }

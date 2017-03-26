@@ -1,5 +1,6 @@
 PODS:
   - Bolts/Tasks (1.8.4)
+  - KVNProgress (2.3.1)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - ParseUI (1.2.0):
@@ -7,14 +8,16 @@ PODS:
     - Parse (~> 1.9)
 
 DEPENDENCIES:
+  - KVNProgress
   - Parse
   - ParseUI
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
 
-PODFILE CHECKSUM: 111320860f93456724454c6f7faf9cb9048d47a5
+PODFILE CHECKSUM: 832d189de6d33ed9273e4805f996f0e4171e4d72
 
 COCOAPODS: 1.1.1

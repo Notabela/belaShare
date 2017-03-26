@@ -7,6 +7,7 @@ target 'belaShare' do
 
   pod 'Parse'
   pod 'ParseUI'
+  pod 'KVNProgress'
   # Pods for belaShare
 
 end

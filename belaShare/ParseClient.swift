@@ -44,5 +44,23 @@ class ParseClient: Parse
 
     }
     
+    class func getPosts(of user: PFUser, withCompletion completion: @escaping ([PFObject]?, Error?) -> Void)
+    {
+        // construct PFQuery
+        let query = PFQuery(className: "Post")
+        query.whereKey("author", equalTo: user)
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        
+        query.findObjectsInBackground
+        {
+            (posts: [PFObject]?, error: Error?) in
+            
+            completion(posts, error)
+        }
+    }
+    
     
 }

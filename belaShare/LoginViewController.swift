@@ -118,6 +118,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.username = username
         newUser.password = password
         newUser["profileImage"] = getPFFileFrom(image: #imageLiteral(resourceName: "defaultProfile"))
+        newUser["backgImage"] = getPFFileFrom(image: #imageLiteral(resourceName: "userbackg"))
         
         newUser.signUpInBackground {
             
